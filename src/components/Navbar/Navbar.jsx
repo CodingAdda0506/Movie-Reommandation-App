@@ -38,14 +38,9 @@ const Navbar = () => {
           />
           <IoMdSearch className="absolute right-2 top-1/2 hidden -translate-y-1/2 sm:block" />
         </div>
-        <select
-          value="hari"
-          className="w-[130px] rounded-lg bg-[#23262e] px-5 py-2 text-base text-[#9ca3af] outline-none"
-        >
+        <select className="w-[130px] rounded-lg bg-[#23262e] px-5 py-2 text-base text-[#9ca3af] outline-none">
           {value.map((val, index) => (
-            <option key={index} value={val}>
-              {val}
-            </option>
+            <option key={index}>{val}</option>
           ))}
         </select>
       </div>
