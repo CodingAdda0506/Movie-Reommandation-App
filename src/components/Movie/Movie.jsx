@@ -1,9 +1,10 @@
 import React from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { AiOutlineStar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
-function RatingStar() {
-  const stars = 4.2;
+function RatingStar(rating) {
+  const stars = rating / 2;
   const ratingStar = Array.from({ length: 5 }, (element, index) => {
     let number = index + 0.5;
 
@@ -25,18 +26,22 @@ function RatingStar() {
   );
 }
 
-const Movie = () => {
+const Movie = ({ movie, index }) => {
+
   return (
     <div className="grid place-content-center">
       <div className="h-[450px] w-[250px]">
         <div className="overflow-hidden rounded-2xl bg-contain">
-          <img src="./black-panther-web.jpg" alt="Movie Poster" />
+          <img
+            src={movie.poster_path ? `http://image.tmdb.org/t/p/w500/${movie.poster_path}` : 'https://www.fillmurray.com/200/300'}
+            alt={movie.title}
+          />
         </div>
         <div className="h-auto">
           <p className="balance mt-4 w-full overflow-hidden overflow-ellipsis whitespace-nowrap px-4 text-white">
-            Black Panther: Long Live The King
+            {movie.title}
           </p>
-          {RatingStar()}
+          {RatingStar(movie.vote_average)}
         </div>
       </div>
     </div>

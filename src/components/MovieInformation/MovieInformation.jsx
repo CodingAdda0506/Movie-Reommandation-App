@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react'
 
 const MovieInformation = () => {
-  return <div>Movie Information</div>;
-};
+  return (
+    <div>MovieInformation</div>
+  )
+}
 
-export default MovieInformation;
+export default MovieInformation
