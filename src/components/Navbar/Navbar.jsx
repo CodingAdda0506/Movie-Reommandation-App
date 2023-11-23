@@ -26,7 +26,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="mx-auto flex items-center justify-center border bg-[#227fb4] px-5 py-5">
+    <div className="mx-auto flex items-center justify-center bg-[#227fb4] px-5 py-5">
       <div className="flex w-full max-w-[1660px] items-center justify-between text-2xl text-white md:px-10">
         {/* <img src="" alt="" srcset=" " /> */}
         <p className="font-bold">MoviesAdda</p>
