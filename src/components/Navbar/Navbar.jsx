@@ -1,5 +1,6 @@
 import React from "react";
 import { IoMdSearch } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const value = [
@@ -29,7 +30,9 @@ const Navbar = () => {
     <div className="mx-auto flex items-center justify-center bg-[#227fb4] px-5 py-5">
       <div className="flex w-full max-w-[1660px] items-center justify-between text-2xl text-white md:px-10">
         {/* <img src="" alt="" srcset=" " /> */}
-        <p className="font-bold">MoviesAdda</p>
+        <Link to="/">
+          <p className="font-bold">MoviesAdda</p>
+        </Link>
         <div className="relative">
           <input
             type="text"

@@ -7,11 +7,12 @@ import MovieInformation from "./components/MovieInformation/MovieInformation";
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <main>
+      <main className="">
         <Router>
+          <Navbar />
           <Routes>
             <Route path="/" element={<Movies />}></Route>
+            <Route path="/home" element={<Movies />}></Route>
             <Route path="/movie/:id" element={<MovieInformation />}></Route>
           </Routes>
         </Router>
