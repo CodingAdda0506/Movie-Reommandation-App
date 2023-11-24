@@ -17,7 +17,11 @@ export const tmdbAPI = createApi({
       query: (id) =>
         `/movie/${id}?append_to_response=videos,credits&api_key=c643a6685dfefa1bd8e9df8ab94f6004`,
     }),
+
+    getGenres: builder.query({
+      query: () => `genre/movie/list?api_key=c643a6685dfefa1bd8e9df8ab94f6004`,
+    }),
   }),
 });
 
-export const { useGetMoviesQuery, useGetMovieQuery } = tmdbAPI;
+export const { useGetMoviesQuery, useGetMovieQuery, useGetGenresQuery } = tmdbAPI;
