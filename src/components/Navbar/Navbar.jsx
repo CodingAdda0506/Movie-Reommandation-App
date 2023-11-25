@@ -1,11 +1,9 @@
 import React from "react";
 import { IoMdSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
-import genreIcons from "../../assets/genres";
 import { useGetGenresQuery } from "../../services/Api";
 
 const Navbar = () => {
-
   const { data, isFetching } = useGetGenresQuery();
   console.log(data);
 
@@ -25,21 +23,31 @@ const Navbar = () => {
           <IoMdSearch className="absolute right-2 top-1/2 hidden -translate-y-1/2 sm:block" />
         </div>
         <select className="w-[130px] rounded-lg bg-[#23262e] px-5 py-2 text-base text-[#9ca3af] outline-none">
-          {isFetching ? (
-            <h5>
-              Loading..
-            </h5>
-          ) : data.genres.map(({ name, id }) => (
-            <Link key={name} to="/">
-              <div onClick={() => { }}>
-                <div>
-                  <img src={genreIcons[name.toLowerCase()]} alt="genreIcons" width={30} height={30} />
-                </div>
-                <p>
-                  {name}
-                </p>
-              </div>
-            </Link>
+          {/* {isFetching ? (
+              <h5>Loading..</h5>
+            ) : (
+              data.genres.map(({ name, id }) => (
+                <Link key={name} to="/">
+                  <div onClick={() => {}}>
+                    <div>
+                      <img
+                        src={genreIcons[name.toLowerCase()]}
+                        alt="genreIcons"
+                        width={30}
+                        height={30}
+                      />
+                    </div>
+                    <p>{name}</p>
+                  </div>
+                </Link>
+              ))
+            )} */}
+          {data?.genres.map(({ name, id }) => (
+            <option value="" className="">
+              <Link key={name} to="/">
+                {name}
+              </Link>
+            </option>
           ))}
         </select>
       </div>
