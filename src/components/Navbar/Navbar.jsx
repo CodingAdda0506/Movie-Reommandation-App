@@ -2,10 +2,13 @@ import React from "react";
 import { IoMdSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useGetGenresQuery } from "../../services/Api";
+import { useDispatch, useSelector } from "react-redux";
+import selectGenre from "../../Feature/currentGenre";
 
 const Navbar = () => {
   const { data, isFetching } = useGetGenresQuery();
-  console.log(data);
+  const dispatch = useDispatch();
+  // const { genreName } = useSelector((state) => state.currentGenre);
 
   return (
     <div className="mx-auto flex items-center justify-center bg-[#227fb4] px-5 py-5">
@@ -23,32 +26,24 @@ const Navbar = () => {
           <IoMdSearch className="absolute right-2 top-1/2 hidden -translate-y-1/2 sm:block" />
         </div>
         <select className="w-[130px] rounded-lg bg-[#23262e] px-5 py-2 text-base text-[#9ca3af] outline-none">
-          {/* {isFetching ? (
-              <h5>Loading..</h5>
-            ) : (
-              data.genres.map(({ name, id }) => (
+          {isFetching ? (
+            <p>Loading..</p>
+          ) : (
+            data?.genres.map(({ name, id }) => (
+              <option value={id} className="" onClick={() => dispatch(selectGenre(id))}>
                 <Link key={name} to="/">
-                  <div onClick={() => {}}>
-                    <div>
-                      <img
-                        src={genreIcons[name.toLowerCase()]}
-                        alt="genreIcons"
-                        width={30}
-                        height={30}
-                      />
-                    </div>
-                    <p>{name}</p>
-                  </div>
+                  {name}
                 </Link>
-              ))
-            )} */}
-          {data?.genres.map(({ name, id }) => (
-            <option value="" className="">
+              </option>
+            ))
+          )}
+          {/* {data?.genres.map(({ name, id }) => (
+            <option value={id} className="" onClick={() => dispatch(selectGenre(id))}>
               <Link key={name} to="/">
                 {name}
               </Link>
             </option>
-          ))}
+          ))} */}
         </select>
       </div>
     </div>

@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useGetMoviesQuery } from '../../services/Api';
+import { useGetGenresQuery, useGetMoviesQuery } from '../../services/Api';
 import MovieList from '../MovieList/MovieList';
+import selectGenre from '../../Feature/currentGenre';
 
 const Movies = () => {
-  const { data, error, isFetching} = useGetMoviesQuery();
-  console.log(data);
+  const [page, setPage] = useState(1);
+  const { genreName } = useSelector((state) => state.currentGenre);
+  const { data, error, isFetching } = useGetMoviesQuery();
 
   if (isFetching) {
     return (
