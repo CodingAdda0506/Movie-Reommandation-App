@@ -33,7 +33,7 @@ const MovieInformation = () => {
 
   const [modalActive, setModalActive] = useState(false);
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <section className="flex items-center justify-center text-white lg:h-full lg:flex-row">
