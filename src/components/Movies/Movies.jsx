@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useGetGenresQuery, useGetMoviesQuery } from '../../services/Api';
 import MovieList from '../MovieList/MovieList';
-import selectGenre from '../../Feature/currentGenre';
+import { selectGenre } from '../../Feature/currentGenre';
 
 const Movies = () => {
   const [page, setPage] = useState(1);
   const { genreName } = useSelector((state) => state.currentGenre);
-  const { data, error, isFetching } = useGetMoviesQuery();
+  const { data, error, isFetching } = useGetMoviesQuery({ genreName, page });
 
   if (isFetching) {
     return (
       <div className="flex justify-center">
-        Loading..
+        <img src="./loader.svg" alt="loader.." />
       </div>
     )
   }

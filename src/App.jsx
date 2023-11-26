@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Movies from "./components/Movies/Movies";
 import MovieInformation from "./components/MovieInformation/MovieInformation";
+import Genre from "./pages/genre";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Movies />}></Route>
             <Route path="/movie/:id" element={<MovieInformation />}></Route>
+            <Route path="/genre" element={<Genre />}></Route>
           </Routes>
         </Router>
       </main>

@@ -15,7 +15,7 @@ export const tmdbAPI = createApi({
     // Get movies by type
     getMovies: builder.query({
       query: ({ genreName, page }) => {
-        
+
         // Get movies by Genre
         if (genreName && typeof genreName === 'number') {
           return `discover/movie?with_genres=${genreName}&page=${page}&api_key=6187eefe4e7289d3efa98940cc920de6`
