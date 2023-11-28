@@ -1,7 +1,6 @@
-import React from 'react';
+import React from "react";
 
 const Pagination = ({ currentPage, totalPages, setPage }) => {
-
   if (totalPages === 0) return null;
 
   const handlePrev = () => {
@@ -17,11 +16,21 @@ const Pagination = ({ currentPage, totalPages, setPage }) => {
   };
 
   return (
-    <div className='flex justify-center items-center'>
-      <button className='flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-700 ' onClick={handlePrev}>Previous</button>
-      <button className='flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-700 ' onClick={handleNext}>Next</button>
+    <div className="flex items-center justify-center">
+      <button
+        className="me-3 flex h-8 items-center justify-center rounded-lg bg-[#227fb4] px-3 text-sm text-white hover:bg-[#175a81]"
+        onClick={handlePrev}
+      >
+        Previous
+      </button>
+      <button
+        className="me-3 flex h-8 items-center justify-center rounded-lg bg-[#227fb4] px-3 text-sm text-white hover:bg-[#175a81]"
+        onClick={handleNext}
+      >
+        Next
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default Pagination
+export default Pagination;
