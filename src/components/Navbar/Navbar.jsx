@@ -1,12 +1,8 @@
 import React from "react";
 import { IoMdSearch } from "react-icons/io";
-import { Link, useNavigate } from "react-router-dom";
-import { useGetGenresQuery } from "../../services/Api";
-import { useDispatch, useSelector } from "react-redux";
-import selectGenre from "../../Feature/currentGenre";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-
   return (
     <div className="mx-auto flex items-center justify-center bg-[#227fb4] px-5 py-5">
       <div className="flex w-full max-w-[1660px] items-center justify-between text-2xl text-white md:px-10">
@@ -22,7 +18,10 @@ const Navbar = () => {
           />
           <IoMdSearch className="absolute right-2 top-1/2 hidden -translate-y-1/2 sm:block" />
         </div>
-        <Link to={`/genre`} className="w-[130px] rounded-lg bg-[#23262e] px-5 py-2 text-base text-[#9ca3af]">
+        <Link
+          to={`/genre`}
+          className="w-[130px] rounded-lg bg-[#23262e] px-5 py-2 text-base text-[#9ca3af]"
+        >
           Select Genre
         </Link>
       </div>
