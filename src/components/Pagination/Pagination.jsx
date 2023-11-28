@@ -16,7 +16,7 @@ const Pagination = ({ currentPage, totalPages, setPage }) => {
   };
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="mb-5 flex items-center justify-center">
       <button
         className="me-3 flex h-8 items-center justify-center rounded-lg bg-[#227fb4] px-3 text-sm text-white hover:bg-[#175a81]"
         onClick={handlePrev}
