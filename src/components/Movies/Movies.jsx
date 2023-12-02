@@ -7,8 +7,8 @@ import Pagination from '../Pagination/Pagination';
 
 const Movies = () => {
   const [page, setPage] = useState(1);
-  const { genreName } = useSelector((state) => state.currentGenre);
-  const { data, error, isFetching } = useGetMoviesQuery({ genreName, page });
+  const { genreName, searchQuery } = useSelector((state) => state.currentGenre);
+  const { data, error, isFetching } = useGetMoviesQuery({ genreName, page, searchQuery });
 
   if (isFetching) {
     return (
